@@ -16,8 +16,8 @@ import com.irfan.capcoba.ui.detail.DetailMovieActivity
 
 class  MoviesFragment : Fragment() {
 
-    private lateinit var _binding : FragmentHomeBinding
-    private val binding get() = _binding
+    private var _binding : FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     private val moviesViewModel: MoviesViewModel by viewModel()
 
@@ -27,7 +27,7 @@ class  MoviesFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         return binding.root
     }
@@ -48,20 +48,20 @@ class  MoviesFragment : Fragment() {
             moviesViewModel.getListMovie.observe(viewLifecycleOwner, { movies->
                 if (movies != null) {
                     when (movies) {
-                        is Resource.Loading -> _binding.progressBar.visibility = View.VISIBLE
+                        is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                         is Resource.Success -> {
-                            _binding.progressBar.visibility = View.GONE
+                            binding.progressBar.visibility = View.GONE
                             moviesAdapter.setMovies(movies.data)
                         }
                         is Resource.Error -> {
-                            _binding.progressBar.visibility = View.GONE
+                            binding.progressBar.visibility = View.GONE
                             Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
             })
 
-            with(_binding.rvMovies){
+            with(binding.rvMovies){
                 layoutManager = GridLayoutManager(requireContext(),2)
                 setHasFixedSize(true)
                 this.adapter= moviesAdapter
@@ -71,7 +71,7 @@ class  MoviesFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding
+        _binding = null
     }
 
 }

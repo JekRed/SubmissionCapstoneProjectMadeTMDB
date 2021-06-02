@@ -17,8 +17,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class TvShowFragment : Fragment() {
 
 
-    private lateinit var _binding : FragmentTvShowBinding
-    private val binding get() = _binding
+    private var _binding : FragmentTvShowBinding? = null
+    private val binding get() = _binding!!
     private val tvShowViewModel: TvShowViewModel by viewModel()
 
 
@@ -48,20 +48,20 @@ class TvShowFragment : Fragment() {
             tvShowViewModel.getListTvShow.observe(viewLifecycleOwner, {tvShow ->
                 if (tvShow != null) {
                     when (tvShow) {
-                        is Resource.Loading -> _binding.progressBar.visibility = View.VISIBLE
+                        is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                         is Resource.Success -> {
-                            _binding.progressBar.visibility = View.GONE
+                            binding.progressBar.visibility = View.GONE
                             tvShowAdapter.setTvShow(tvShow.data)
                         }
                         is Resource.Error -> {
-                            _binding.progressBar.visibility = View.GONE
+                            binding.progressBar.visibility = View.GONE
                             Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
             })
 
-            with(_binding.rvMovies){
+            with(binding.rvMovies){
                 layoutManager = GridLayoutManager(requireContext(),2)
                 setHasFixedSize(true)
                 this.adapter= tvShowAdapter
@@ -71,6 +71,6 @@ class TvShowFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding
+        _binding = null
     }
 }

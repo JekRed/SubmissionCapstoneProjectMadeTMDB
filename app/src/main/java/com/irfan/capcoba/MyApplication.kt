@@ -6,11 +6,15 @@ import com.irfan.core.di.networkModule
 import com.irfan.core.di.repositoryModule
 import com.irfan.capcoba.ui.di.useCaseModule
 import com.irfan.capcoba.ui.di.viewModelModule
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 
+@FlowPreview
+@ExperimentalCoroutinesApi
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
