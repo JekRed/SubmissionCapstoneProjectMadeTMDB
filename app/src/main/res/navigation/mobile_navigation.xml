@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_movies">
+
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="com.irfan.capcoba.ui.movies.MoviesFragment"
+        android:label="@string/title_movies"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_tvshow"
+        android:name="com.irfan.capcoba.ui.tvshow.TvShowFragment"
+        android:label="@string/title_tvshow"
+        tools:layout="@layout/fragment_tv_show" />
+
+    <fragment
+        android:id="@+id/navigation_favorit"
+        android:name="com.irfan.favourite.favourite.FavoriteFragment"
+        android:label="@string/title_favorit"
+        tools:layout="@layout/fragment_favorit" />
+</navigation>
