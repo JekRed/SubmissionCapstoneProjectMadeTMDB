@@ -5,6 +5,8 @@ import com.irfan.core.domain.usecase.MoviesUseCase
 import com.irfan.capcoba.ui.detail.DetailMovieViewModel
 import com.irfan.capcoba.ui.movies.MoviesViewModel
 import com.irfan.capcoba.ui.tvshow.TvShowViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -12,6 +14,8 @@ val useCaseModule = module {
     factory<MoviesUseCase> { MoviesInteractor(get()) }
 }
 
+@ExperimentalCoroutinesApi
+@FlowPreview
 val viewModelModule = module {
     viewModel { DetailMovieViewModel(get()) }
     viewModel { MoviesViewModel(get()) }

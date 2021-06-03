@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Submission Capstone Project</string>
-    <string name="title_activity_home">MainActivity</string>
     <string name="title_movies">Movies</string>
     <string name="title_tvshow">TvShow</string>
     <string name="title_favorit">Favorite</string>
@@ -8,11 +7,12 @@
     <string name="favorite_movies">Favorite Movie</string>
     <string name="favorite_tv_shows">Favorite TV Show</string>
     <string name="baseUrlImage">https://image.tmdb.org/t/p/w500%s</string>
-    <string name="message_undo">Batalkan menghapus item sebelumnya?</string>
-    <string name="message_ok">Oke</string>
     <string name="no_data">Empty data</string>
     <string name="poster">poster</string>
     <string name="lorem_ipsum">Lorem Ipsum</string>
+    <string name="rating">rating</string>
+    <string name="detail_movie">Detail Movie</string>
+    <string name="title">Title</string>
 
 
 </resources>

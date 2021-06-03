@@ -40,8 +40,6 @@ class DetailMovieActivity : AppCompatActivity(), View.OnClickListener {
 
         setContentView(activityDetailMoviesBinding.root)
 
-
-
         val backArrow : ImageView = findViewById(R.id.imageView2)
         backArrow.setOnClickListener(this)
 
@@ -157,7 +155,6 @@ class DetailMovieActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
-
 
 
     override fun onClick(v: View?) {

@@ -40,7 +40,7 @@
         android:layout_marginTop="12dp"
         android:background = "@drawable/shape_rectangle_8_ff"
         style="@style/TextView.Poppins12black"
-        android:text="17+"
+        android:text="@string/rating"
         app:layout_constraintEnd_toEndOf="@+id/ivPoster"
         app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="@+id/ivPoster"

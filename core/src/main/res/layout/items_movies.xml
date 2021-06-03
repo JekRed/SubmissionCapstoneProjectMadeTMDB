@@ -18,7 +18,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998" />
+        app:layout_constraintVertical_bias="0.01999998"
+        android:contentDescription="@string/poster" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDetail"
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="58dp"
-        android:text="Detail Movie"
+        android:text="@string/detail_movie"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,7 @@
         android:layout_marginTop="12dp"
         android:background = "@drawable/shape_rectangle_8_ff"
         style="@style/TextView.Poppins12black"
-        android:text="17+"
+        android:text="@string/rating"
         app:layout_constraintEnd_toEndOf="@+id/ivPoster"
         app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="@+id/ivPoster"
@@ -53,7 +54,7 @@
         style="@style/TextView.Poppins14white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:text="@string/title"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/ivPoster"
         app:layout_constraintEnd_toEndOf="@+id/ivPoster"
